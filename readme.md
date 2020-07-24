@@ -44,7 +44,7 @@ A mini solution for customers who want to get Adobe Launch Notifications on thei
 P.S. This is an initial version of the readme. The document will get updated with explained steps soon.
 
 ##  Contact
-  * [Prateek Kejriwal]('mailto:kejriwal@adobe.com')
-  * [Abhishek Kumar]('mailto:abhikum@adobe.com')
+  * [Prateek Kejriwal](mailto:kejriwal@adobe.com)
+  * [Abhishek Kumar](mailto:abhikum@adobe.com)
 
 
