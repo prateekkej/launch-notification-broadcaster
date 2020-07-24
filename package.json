@@ -1,0 +1,22 @@
+{
+  "name": "launch-notification-broadcaster",
+  "version": "1.0.0",
+  "description": "Use this to parse Audit Events by Adobe Launch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm run zip &&  wsk action create adobe-launch-notifications --kind nodejs:12 ./adobe-launch-notifications.zip --web true",
+    "add-get-api": "wsk api create /notifications /launch get adobe-launch-notifications --response-type http",
+    "add-post-api": "wsk api create /notifications /launch post adobe-launch-notifications --response-type http",
+    "add-apis": "npm run add-post-api && npm run add-get-api",
+    "update": "del adobe-launch-notifications.zip | npm run zip && wsk action update adobe-launch-notifications --kind nodejs:12 ./adobe-launch-notifications.zip --web true",
+    "zip": "jar -cfM adobe-launch-notifications.zip ./",
+    "delete": "wsk action delete adobe-launch-notifications && wsk api delete /notifications"
+  },
+  "author": "Prateek Kejriwal",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "moment-timezone": "^0.5.31"
+  }
+}
