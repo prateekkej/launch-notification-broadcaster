@@ -1,10 +1,10 @@
-#Adobe Launch Notification Broadcaster
+#   Adobe Launch Notification Broadcaster
 
-##Description
+##  Description
 
 A mini solution for customers who want to get Adobe Launch Notifications on their desired notification endpoints. It runs as a web action on **Apache OpenWhisk** / **Adobe IO Runtime**  and supports various extensions like Adobe Campaign (WIP), Postbacks, Slack APIs, file system etc.
 
-##Features
+##  Features
 1.  Runs on Customer's Experience Cloud
     1.  No extra infrastructure needed. Just minimal cost for Runtime.
 2.  Can extend its functionality with custom notification receivers.
@@ -16,7 +16,7 @@ A mini solution for customers who want to get Adobe Launch Notifications on thei
   
 
 
-##Pre-requisites
+##  Pre-requisites
 1.  An Adobe IO project with access to Adobe Launch
     *  To create a callback on Launch Properties  
 2.  Access to Adobe IO Runtime / OpenWhisk Instance
@@ -24,7 +24,7 @@ A mini solution for customers who want to get Adobe Launch Notifications on thei
 3. A notification receiver
     *  To receive notifications
 
-##How to use?
+##  How to use?
 1. Setup your local environment for Adobe IO Runtime. Follow the guide here for setup. 
 2. Once the initial setup is done, make sure you are able to access the below given commands in terminal
    1. wsk action list
@@ -43,7 +43,7 @@ A mini solution for customers who want to get Adobe Launch Notifications on thei
 
 P.S. This is an initial version of the readme. The document will get updated with explained steps soon.
 
-##Contact
+##  Contact
   * [Prateek Kejriwal]('mailto:kejriwal@adobe.com')
   * [Abhishek Kumar]('mailto:abhikum@adobe.com')
 
