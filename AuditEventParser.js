@@ -51,6 +51,10 @@ module.exports = class {
       poweredBy:this.poweredBy
     }
   }
+
+  get raw(){
+    return this.raw
+  }
 }
 
 const COMPONENT_TYPES = {
