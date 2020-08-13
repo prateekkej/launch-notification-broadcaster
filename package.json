@@ -3,18 +3,26 @@
   "version": "1.0.0",
   "description": "Use this to parse Audit Events by Adobe Launch and send them to your own locations.",
   "main": "index.js",
-  "repository": {"type": "git","url":"https://git.corp.adobe.com/kejriwal/launch-notification-broadcaster.git"},
+  "repository": {
+    "type": "git",
+    "url": "https://git.corp.adobe.com/kejriwal/launch-notification-broadcaster.git"
+  },
+  "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "npm run zip &&  wsk action create adobe-launch-notifications --kind nodejs:12 ./adobe-launch-notifications.zip --web true",
-    "add-get-api": "wsk api create /notifications /launch get adobe-launch-notifications --response-type http",
-    "add-post-api": "wsk api create /notifications /launch post adobe-launch-notifications --response-type http",
+    "add-get-api": "wsk api create /notifications /launch/adobe get adobe-launch-notifications --response-type http",
+    "add-post-api": "wsk api create /notifications /launch/adobe post adobe-launch-notifications --response-type http",
     "add-apis": "npm run add-post-api && npm run add-get-api",
     "update": "del adobe-launch-notifications.zip | npm run zip && wsk action update adobe-launch-notifications --kind nodejs:12 ./adobe-launch-notifications.zip --web true",
     "zip": "jar -cfM adobe-launch-notifications.zip ./",
     "delete": "wsk action delete adobe-launch-notifications && wsk api delete /notifications"
   },
-  "author": {"email": "kejriwal@adobe.com","name": "Prateek Kejriwal","url": "https://git.corp.adobe.com/kejriwal"},
+  "author": {
+    "email": "kejriwal@adobe.com",
+    "name": "Prateek Kejriwal",
+    "url": "https://git.corp.adobe.com/kejriwal"
+  },
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
