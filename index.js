@@ -19,8 +19,8 @@ function main (args) {
         try {
           extension.send(event)
         } catch (exc) {
-          if(configuration.broadcaster && configuration.broadcaster.healtcheckURLs){
-            configuration.broadcaster.healtcheckURLs.forEach(x=>{
+          if(configuration.broadcaster && configuration.broadcaster.healthCheckURLs){
+            configuration.broadcaster.healthCheckURLs.forEach(x=>{
               axios.post(x,`Extension:${extension.info.name}Error: While sending notification - ${exc.message}\nStack:${exc.stack}`).catch(console.error)
             })
           }

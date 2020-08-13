@@ -40,6 +40,6 @@ module.exports = {
   broadcaster: {
     tz: 'asia/calcutta',
     poweredBy:"Adobe I/O Runtime",
-    healtcheckURLs:['URL_HERE']
+    healthCheckURLs:['URL_HERE']
   }
 }
