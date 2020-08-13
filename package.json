@@ -10,13 +10,13 @@
   "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "npm run zip &&  wsk action create adobe-launch-notifications --kind nodejs:12 ./adobe-launch-notifications.zip --web true",
-    "add-get-api": "wsk api create /notifications /launch/adobe get adobe-launch-notifications --response-type http",
-    "add-post-api": "wsk api create /notifications /launch/adobe post adobe-launch-notifications --response-type http",
+    "install": "npm run zip &&  wsk action create {companyName}-launch-notifications --kind nodejs:12 ./{companyName}-launch-notifications.zip --web true",
+    "add-get-api": "wsk api create /notifications /launch/{companyName}- get {companyName}-launch-notifications --response-type http",
+    "add-post-api": "wsk api create /notifications /launch/{companyName}- post {companyName}-launch-notifications --response-type http",
     "add-apis": "npm run add-post-api && npm run add-get-api",
-    "update": "del adobe-launch-notifications.zip | npm run zip && wsk action update adobe-launch-notifications --kind nodejs:12 ./adobe-launch-notifications.zip --web true",
-    "zip": "jar -cfM adobe-launch-notifications.zip ./",
-    "delete": "wsk action delete adobe-launch-notifications && wsk api delete /notifications"
+    "update": "del {companyName}-launch-notifications.zip | npm run zip && wsk action update {companyName}-launch-notifications --kind nodejs:12 ./{companyName}-launch-notifications.zip --web true",
+    "zip": "jar -cfM {companyName}-launch-notifications.zip ./",
+    "delete": "wsk action delete {companyName}-launch-notifications && wsk api delete /notifications"
   },
   "author": {
     "email": "kejriwal@adobe.com",

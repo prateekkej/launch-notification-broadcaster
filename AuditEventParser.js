@@ -30,6 +30,7 @@ module.exports = class {
     }
     if (data.relationships && data.relationships.property && data.relationships.property.data && data.relationships.property.data.id) { this.propertyId = data.relationships.property.data.id }
     if(options.poweredBy)this.poweredBy=options.poweredBy
+    this.who={ email: this.userEmail, name: this.userName }
   }
 
   get componentType () { return this._componentType }
@@ -38,7 +39,6 @@ module.exports = class {
   get eventType () { return this._eventType }
   set eventType (val) { if (EVENT_TYPES[val.toUpperCase()]) this._eventType = val }
 
-  get who () { return { email: this.userEmail, name: this.userName } }
   get about () {
     return {
       componentType: this.componentType,
@@ -50,10 +50,6 @@ module.exports = class {
       eventDetails: this.eventDetails.attributes,
       poweredBy:this.poweredBy
     }
-  }
-
-  get raw(){
-    return this.raw
   }
 }
 
