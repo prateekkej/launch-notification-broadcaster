@@ -31,7 +31,11 @@ function main (args) {
     }
   } catch (exc) {
     error=exc
-    axios.post(x,`Error:${exc.message}\nStack:${exc.stack}`).catch(console.error)
+    if(configuration.broadcaster && configuration.broadcaster.healthCheckURLs){
+      configuration.broadcaster.healthCheckURLs.forEach(x=>{
+        axios.post(x,`Error:${exc.message}\nStack:${exc.stack}`).catch(console.error)
+      })
+    }
   }
 
   return { statusCode: 200 ,body:event.raw,error:error}

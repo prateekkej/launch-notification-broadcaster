@@ -4,8 +4,8 @@ module.exports = {
       enabled: true,
       webhooksMap:
               [
-                { propertyIds: ['*'], urls: ['https://hooks.slack.com/services/T02HN1D3G/B0146LG2Z2L/STEdjrCorKtvr'] },
-                { propertyIds: ['PROPERTY_ID'], urls: ['https://hooks.slack.com/services/T02HN1D3G/B0146LG2Z2L/STEdjrCorKtvr'] }
+                { propertyIds: ['*'], urls: ['https://hooks.slack.com/services/T02HN1D3G/B0146LG2Z2L/cccccc'] },
+                { propertyIds: ['PROPERTY_ID'], urls: ['https://hooks.slack.com/services/T02HN1D3G/B0146LG2Z2L/cccccc'] }
 
               ]
     },
@@ -28,10 +28,10 @@ module.exports = {
       filePath: './launch-events'
     },
     postbacks:{
-      enabled: true,
+      enabled: false,
       urlsMapping:
               [
-                { propertyIds: ['*'], urls: ['https://0efbaeda215c.ngrok.io'] },
+                { propertyIds: ['*'], urls: ['https://DUMMY_URL.ngrok.io'] },
                 { propertyIds: ['PROPERTY_ID'], urls: ['URL_HERE'] }
 
               ]
@@ -40,6 +40,6 @@ module.exports = {
   broadcaster: {
     tz: 'asia/calcutta',
     poweredBy:"Adobe I/O Runtime",
-    healthCheckURLs:['URL_HERE']
+    healthCheckURLs:['URL']
   }
 }
