@@ -4,9 +4,7 @@ module.exports = {
       enabled: true,
       webhooksMap:
               [
-                { propertyIds: ['*'], urls: ['https://hooks.slack.com/services/T02HN1D3G/B0146LG2Z2L/cccccc'] },
-                { propertyIds: ['PROPERTY_ID'], urls: ['https://hooks.slack.com/services/T02HN1D3G/B0146LG2Z2L/cccccc'] }
-
+                { propertyIds: ['PRf239f9d15010473aa4530352d946'], urls: ['deletehttps://hooks.slack.com/services/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me'] }
               ]
     },
     teams: {
@@ -40,6 +38,6 @@ module.exports = {
   broadcaster: {
     tz: 'asia/calcutta',
     poweredBy:"Adobe I/O Runtime",
-    healthCheckURLs:['URL']
+    healthCheckURLs:[]
   }
 }

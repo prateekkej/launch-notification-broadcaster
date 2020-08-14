@@ -30,8 +30,9 @@ A mini solution for customers who want to get Adobe Launch Notifications on thei
    1. wsk action list
    2. wsk activation list
 3. Once the access is validated, clone this repo or download as zip and extract.
-4. Make changes to configuration.js in the root directory as per the requirement.
+4. Make changes to configuration.js and package.json in the root directory as per the requirement.
    1. Usual changes will include updating the slack URLs, postback URLs and healthcheck URLs.
+   2. Replace {companyName} with your client's name.
 5. Open a terminal / cmd / powershell in  the root directory (containing package.json)
 6. Execute the following commands-
    1. npm install .

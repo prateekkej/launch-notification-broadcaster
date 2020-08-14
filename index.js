@@ -14,7 +14,7 @@ function main (args) {
     console.log('Event Received ' + event.componentType + '  ' + event.eventType)
     if (event.who && event.who.name !== null &&
      event.componentType === 'environment' &&
-     event.componentName.toLowerCase() !== 'development' &&
+    //  event.componentName.toLowerCase() !== 'development' &&
      event.componentName.toLowerCase() !== 'staging') {
       extensions.forEach(extension => {
         try {
