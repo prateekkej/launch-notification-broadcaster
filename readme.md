@@ -25,22 +25,24 @@ A mini solution for customers who want to get Adobe Launch Notifications on thei
     *  To receive notifications
 
 ##  How to use?
-1. Setup your local environment for Adobe IO Runtime. Follow the guide here for setup. 
+1. Setup your local environment for Adobe IO Runtime. Follow the guide [here](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/getting-started/setup.md) for setup. 
 2. Once the initial setup is done, make sure you are able to access the below given commands in terminal
    1. wsk action list
    2. wsk activation list
 3. Once the access is validated, clone this repo or download as zip and extract.
 4. Make changes to configuration.js and package.json in the root directory as per the requirement.
-   1. Usual changes will include updating the slack URLs, postback URLs and healthcheck URLs.
-   2. Replace {companyName} with your client's name.
-5. Open a terminal / cmd / powershell in  the root directory (containing package.json)
-6. Execute the following commands-
+   1. Usual changes will include updating the _**slack URLs**_, _**postback URLs**_ and _**healthcheck URLs**_ in configuration.js
+   2. Replace _**{companyName}**_ with your client's name in package.json
+5. Once updated, open index.js and update the filter() method as per requirement. 
+6. Open a terminal / cmd in  the root directory (containing package.json)
+7. Execute the following commands-
    1. npm install .
-   2. npm run add-apis
-7. Once done, you will see a URL on the terminal.
+   2. npm run deploy
+   3. npm run add-apis
+8. Once done, you will see a URL on the terminal.
    1. This URL will be passed as a callback URL to Adobe Launch
-8. Use Adobe Launch APIs to set a callback for required events and pass this URL as the callback URL.
-9.  Done! 
+9. Use Adobe Launch APIs to set a callback for required events and pass this URL as the callback URL.
+10. Done! 
 
 P.S. This is an initial version of the readme. The document will get updated with explained steps soon.
 

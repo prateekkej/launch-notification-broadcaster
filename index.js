@@ -1,21 +1,22 @@
-const AuditEventParser = require('./AuditEventParser')
 var axios = require('axios').default
 const configuration = require('./configuration')
-
+const { AuditEvent,LaunchEvent } = require('./AuditEventParser')
 const extensions = require('./extensions')(configuration.extensions)
 
+
 function main (args) {
+  //If a get request, configuration is returned
   if (args.__ow_method === 'get') { return { statusCode: 200, body: configuration } }
   var event
   let error
   const data = args.data
   try {
-    event = new AuditEventParser(data, configuration.broadcaster)
+    event = new AuditEvent(data, configuration.broadcaster)
     console.log('Event Received ' + event.componentType + '  ' + event.eventType)
-    if (event.who && event.who.name !== null &&
-     event.componentType === 'environment' &&
-    //  event.componentName.toLowerCase() !== 'development' &&
-     event.componentName.toLowerCase() !== 'staging') {
+    // Filter according to conditions
+    let isEligible=checkEligibility(event)
+    if (isEligible) {
+      // Send to every notification Sink
       extensions.forEach(extension => {
         try {
           extension.send(event)
@@ -37,7 +38,16 @@ function main (args) {
       })
     }
   }
+  let statusCode=200
+if(error){statusCode=500}
+  return { statusCode ,body:event.raw,error:error}
+}
 
-  return { statusCode: 200 ,body:event.raw,error:error}
+// Should return a boolean to decide whether to send notification or not.
+function checkEligibility(event){
+  return (event.who && event.who.name !== null &&
+  event.componentType === 'environment' &&
+  event.componentName.toLowerCase() !== 'development' &&
+  event.componentName.toLowerCase() !== 'staging')
 }
 module.exports.main = main

@@ -10,7 +10,7 @@
   "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "npm run zip &&  wsk action create {companyName}-launch-notifications --kind nodejs:12 ./{companyName}-launch-notifications.zip --web true",
+    "deploy": "npm run zip &&  wsk action create {companyName}-launch-notifications --kind nodejs:12 ./{companyName}-launch-notifications.zip --web true",
     "add-get-api": "wsk api create /notifications /launch/{companyName} get {companyName}-launch-notifications --response-type http",
     "add-post-api": "wsk api create /notifications /launch/{companyName} post {companyName}-launch-notifications --response-type http",
     "add-apis": "npm run add-post-api && npm run add-get-api",
@@ -27,5 +27,6 @@
   "dependencies": {
     "axios": "^0.19.2",
     "moment-timezone": "^0.5.31"
-  }
+  },
+  "devDependencies": {}
 }
