@@ -44,6 +44,8 @@ if(error){statusCode=500}
 }
 
 // Should return a boolean to decide whether to send notification or not.
+// Recommended to always retain event.who and event.who.name check to make sure we do not get noisy data
+// The following filter sends a notification for changes to production to environment.
 function checkEligibility(event){
   return (event.who && event.who.name !== null &&
   event.componentType === 'environment' &&
