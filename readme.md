@@ -33,7 +33,7 @@ A mini solution for customers who want to get Adobe Launch Notifications on thei
 4. Make changes to configuration.js and package.json in the root directory as per the requirement.
    1. Usual changes will include updating the _**slack URLs**_, _**postback URLs**_ and _**healthcheck URLs**_ in configuration.js
    2. Replace _**{companyName}**_ with your client's name in package.json
-5. Once updated, open index.js and update the filter() method as per requirement. 
+5. Once updated, open index.js and update the checkEligibility() method as per requirement. 
 6. Open a terminal / cmd in  the root directory (containing package.json)
 7. Execute the following commands-
    1. npm install .
@@ -45,6 +45,21 @@ A mini solution for customers who want to get Adobe Launch Notifications on thei
 10. Done! 
 
 P.S. This is an initial version of the readme. The document will get updated with explained steps soon.
+
+##  Sample Payload for Custom HTTP Receivers
+
+```
+var payload={
+      componentType: String,
+      componentName: String,
+      propertyName: String,
+      eventType: String,
+      when: MomentObject | Time,
+      who: { name: String, email: String },
+      eventDetails: Object,
+      poweredBy: String
+}
+```
 
 ##  Contact
   * [Prateek Kejriwal](mailto:kejriwal@adobe.com)

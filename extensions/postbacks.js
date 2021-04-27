@@ -1,5 +1,5 @@
-var axios = require('axios').default
-var configuration = { globalUrls: [], properties: {} }
+const axios = require('axios').default
+const configuration = { globalUrls: [], properties: {} }
 
 module.exports.info = {
   name: 'PostBack Notification',
