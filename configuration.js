@@ -12,8 +12,8 @@ module.exports = {
                 // Each object should have 
                 // 1. propertyIds: an array of Launch property IDs from where you want to send notifications. Use * to allow every property.
                 // 2. urls: an array of slack urls. All URLs will receive a notification.
-                { propertyIds: ['PROPERTY_ID'], urls: ['deletehttps://hooks.slack.com/services/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me'] },
-                { propertyIds: ['*'], urls: ['deletehttps://hooks.slack.com/services/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me'] }
+                { propertyIds: ['PROPERTY_ID'], urls: ['deletehttps://hooks.slack.com/services/XXXDDXXDD/DDDSSSEEE/DtnZSMgxZ7NtcQHvMgUm6ii5me'] },
+                { propertyIds: ['*'], urls: ['deletehttps://hooks.slack.com/services/XXDDDXXDD/DD/DtnZSMgxZ7NtcQHvMgUm6ii5me'] }
               ]
     },
     postbacks:{
